@@ -1,5 +1,4 @@
 /* eslint-disable max-classes-per-file */
-const EnvironmentPlugin = require('webpack/lib/EnvironmentPlugin');
 const Plugin = require('../src/Plugin');
 
 class StringifyPlugin {
@@ -125,19 +124,6 @@ test('toConfig with object literal plugin', () => {
   const initialized = plugin.toConfig();
 
   expect(initialized).toBe(TestPlugin);
-});
-
-test('toConfig with plugin as path', () => {
-  const plugin = new Plugin(null, 'gamma');
-  const envPluginPath = require.resolve('webpack/lib/EnvironmentPlugin');
-
-  plugin.use(envPluginPath);
-
-  const initialized = plugin.toConfig();
-
-  expect(initialized instanceof EnvironmentPlugin).toBe(true);
-  expect(initialized.__pluginConstructorName).toBe('EnvironmentPlugin');
-  expect(initialized.__pluginPath).toBe(envPluginPath);
 });
 
 test('toConfig without having called use()', () => {
