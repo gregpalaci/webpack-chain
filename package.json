@@ -29,7 +29,10 @@
     "test": "jest",
     "test:types": "tsc -p ./types/test/tsconfig.json",
     "changelog": "auto-changelog --remote upstream --commit-limit false",
-    "version": "yarn changelog --package && git add CHANGELOG.md"
+    "version": "yarn changelog --package && git add CHANGELOG.md",
+    "serve-vite": "vite",
+    "build-vite": "vite build",
+    "preview-vite": "vite preview"
   },
   "dependencies": {
     "deepmerge": "^1.5.2",
@@ -49,6 +52,10 @@
     "jest": "^27.0.0",
     "prettier": "^2.0.5",
     "typescript": "^4.0.0",
-    "webpack": "^4.43.0"
+    "webpack": "^4.43.0",
+    "vite-plugin-env-compatible": "^1.1.1",
+    "vite-plugin-html": "3.2.0",
+    "vite": "^2.7.2",
+    "@originjs/vite-plugin-commonjs": "^1.0.1"
   }
 }
